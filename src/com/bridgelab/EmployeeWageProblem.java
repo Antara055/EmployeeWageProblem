@@ -1,13 +1,10 @@
 package com.bridgelab;
-import java.sql.SQLOutput;
 import java.util.Random;
 
 public class EmployeeWageProblem {
     public static final int IS_PARTTIME = 1;
     public static final int IS_FULLTIME = 2;
     public static final int WAGE_PER_HOUR = 20;
-    public static final int TOTAL_HOUR = 8;
-    public static final int PARTTIME_HOURS = 4;
     public static final int WORKING_DAY = 20;
     public static final int MAX_HRS_IN_MONTH = 100;
 
