@@ -1,14 +1,11 @@
-package com.bridgelab;
-public class EmployeeWageProblem {
-
+class ComputeEmpWage {
     public static final int IS_PARTTIME = 1;
     public static final int IS_FULLTIME = 2;
     public static final int WAGE_PER_HOUR = 20;
     public static final int WORKING_DAY = 20;
     public static final int MAX_HRS_IN_MONTH = 100;
-    public static int ComputeEmpWage()
 
-    {
+    public static int ComputeEmpWage() {
         //variable
         int empHrs = 0, totalEmpHours = 0, totalWokinDays = 0;
         //code
@@ -32,8 +29,11 @@ public class EmployeeWageProblem {
         System.out.println("Total Employee Wage: " + totalEmpWage);
         return totalEmpWage;
     }
-    public static void main(String[] args) {
-        System.out.println("Welcome to Employee Wage problem");
-        ComputeEmpWage();
-    }
 }
+
+
+
+
+
+
+
