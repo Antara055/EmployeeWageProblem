@@ -1,34 +1,38 @@
 package com.bridgelab;
+import java.sql.SQLOutput;
 import java.util.Random;
 
 public class EmployeeWageProblem {
+    public static final int IS_PARTTIME = 1;
+    public static final int IS_FULLTIME = 2;
+    public static final int WAGE_PER_HOUR = 20;
+    public static final int TOTAL_HOUR = 8;
+    public static final int PARTTIME_HOURS = 4;
+    public static final int WORKING_DAY = 20;
+    public static final int MAX_HRS_IN_MONTH = 100;
+
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage problem");
-        //This program will check the employee is present or absent
-        Random random = new Random();
         //variable
-        int WAGE_PER_HOUR = 20;
-        int TOTAL_HOUR = 8;
-        int PARTTIME_HOURS = 4;
-        int WORKING_DAY = 20;
-        int daily_wage=0;
-        int monthly_wages=0;
+        int empHrs = 0, totalEmpHours = 0, totalWokinDays = 0;
         //code
-
-        for (int days_count = 1; days_count <= WORKING_DAY; days_count++) {
-            int job_timing = random.nextInt(3);
-            switch (job_timing) {
-                case 1:
-                    daily_wage=WAGE_PER_HOUR * TOTAL_HOUR *days_count;
+        while (totalEmpHours <= MAX_HRS_IN_MONTH && totalWokinDays < WORKING_DAY) {
+            totalWokinDays++;
+            int empCheck = (int) Math.floor(Math.random() * 10) % 3;
+            switch (empCheck) {
+                case IS_PARTTIME:
+                    empHrs = 4;
                     break;
-                case 2:
-                    daily_wage=WAGE_PER_HOUR * PARTTIME_HOURS *days_count;
+                case IS_FULLTIME:
+                    empHrs = 8;
                     break;
-                case 0:
-                    break;
+                default:
+                    empHrs = 0;
             }
-           monthly_wages=daily_wage+monthly_wages;
+            totalEmpHours = totalEmpHours + empHrs;
+            System.out.println("Days:" +totalWokinDays+ "Employee hours:" + empHrs);
         }
-        System.out.println("Monthly Wages = " +monthly_wages);
+        int totalEmpWage = totalEmpHours * WAGE_PER_HOUR;
+        System.out.println("Total Employee Wage: " + totalEmpWage);
     }
 }
